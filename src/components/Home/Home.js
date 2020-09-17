@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Home.css'
 import Post from '../Post/Post';
 import { useHistory } from 'react-router-dom';
-
 import Button from '@material-ui/core/Button';
 
 const Home = () => {

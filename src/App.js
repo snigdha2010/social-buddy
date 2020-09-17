@@ -9,6 +9,7 @@ import {
 import NoMatch from './components/NoMatch/NoMatch';
 import Home from './components/Home/Home';
 import PostDetails from './components/PostDetails/PostDetails';
+import Comments from './components/Comments/Comments';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path = '/friend/:friendId'>
           <PostDetails/>
+        </Route>
+        <Route path = '/comments'>
+            <Comments/>
         </Route>
         <Route path='*'> 
           <NoMatch/>
