@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Comments.css'
 
 
-const Comments = () => {
-    const [comment, setComment] = useState([])
-    useEffect(()=>{
-        const url = `https://jsonplaceholder.typicode.com/comments/${friendId}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setComment(data))     
-    },[])
-
+const Comments = (props) => { 
+  const {name,body,email} = props.comment
     return (
         <div>
-            <h2>kk</h2>
-            <p></p>
-            <p></p>
+            <h1>Comments:</h1>
+            <h2>{name}</h2>
+            <p>{body}</p>
+            <p>Email:{email}</p>
         </div>
     );
 };
