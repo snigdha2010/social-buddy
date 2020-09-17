@@ -10,6 +10,7 @@ import NoMatch from './components/NoMatch/NoMatch';
 import Home from './components/Home/Home';
 import PostDetails from './components/PostDetails/PostDetails';
 import Comments from './components/Comments/Comments';
+import NavBar from './components/NavBar /NavBar';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
     //post + show comment >component > dynamic 
     // pic with comment
     <div>
+      
     <Router>
+      <NavBar></NavBar>
       <Switch>
         <Route exact path='/'>
           <Home/>
