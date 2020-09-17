@@ -5,9 +5,10 @@ import Post from '../Post/Post';
 import Comments from '../Comments/Comments';
 
 const PostDetails = () => {
-    const {friendId} = useParams();
+    const {postId} = useParams();
     const [posts,setPost] = useState([])
     const [comment, setComment] = useState([])
+    const [country,setCountry] = useState([])
     
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -16,20 +17,41 @@ const PostDetails = () => {
     },[])
 
     useEffect(()=>{
-        const url = `https://jsonplaceholder.typicode.com/comments/${friendId}`
+        const url = `https://jsonplaceholder.typicode.com/comments/${postId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setComment(data))     
     },[])
 
-  const post = posts.find(pt=>pt.id === parseInt(friendId))
+    useEffect(()=>{
+        fetch('https://restcountries.eu/rest/v2/all')
+        .then(res =>res.json())
+        .then(data=> {
+           const newData = data.slice(0,100)
+            setCountry(newData)
+        }
+            )
+    })
+    posts.forEach((item)=>{
+        item.flag = "https://restcountries.eu/data/cog.svg"
+       })
+  const post = posts.find(pt=>pt.id === parseInt(postId))
+  
+ 
+ 
+
+ //console.log(post)
+  //const newComment = [...comment, flag ]
+
     return (
         <div>
             Details
             {
                post && (<Post post={post}></Post>) 
             } 
-            <Comments comment={comment} ></Comments>
+            {
+           post &&(<Comments post = {post} comment={comment} ></Comments>)
+            }
         </div>
     );
 };

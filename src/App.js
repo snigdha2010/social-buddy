@@ -26,7 +26,7 @@ function App() {
         <Route exact path='/'>
           <Home/>
         </Route>
-        <Route path = '/friend/:friendId'>
+        <Route path = '/post/:postId'>
           <PostDetails/>
         </Route>
         <Route path = '/comments'>
