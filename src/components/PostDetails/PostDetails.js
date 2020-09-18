@@ -29,8 +29,7 @@ const PostDetails = () => {
         .then(data=> {
            const newData = data.slice(0,100)
             setFlag(newData)
-        }
-            )
+        })
     })
 
     
@@ -41,8 +40,6 @@ const PostDetails = () => {
 
     const post = posts.find(pt=>pt.id === parseInt(postId));
   
-  
-
 
     return (
         <div style={{padding: 24,margin:40}}>
@@ -50,16 +47,16 @@ const PostDetails = () => {
             <div style={{marginLeft:70,marginBottom:60}} >
             {
                post && (<Post 
-                key ={post.id}
-                post={post}></Post>) 
+               key ={post.id}
+               post={post}></Post>) 
             }
             </div>
            
             {
-           post &&(<Comments 
-             key = {post.id}
-             post = {post} 
-            comment={comment} ></Comments>)
+              post &&(<Comments 
+              key = {post.id}
+              post = {post} 
+              comment={comment} ></Comments>)
             }
         </div>
     );
