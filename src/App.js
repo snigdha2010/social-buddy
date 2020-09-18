@@ -14,13 +14,6 @@ import NavBar from './components/NavBar /NavBar';
 
 function App() {
   return (
-    // <div className="App">
-    //   <Button variant='contained' color='primary'>Buddy</Button>
-    // </div>
-    //mui, 
-    //show posts, see more btn > detail post using route ,
-    //post + show comment >component > dynamic 
-    // pic with comment
     <div>
       
     <Router>
